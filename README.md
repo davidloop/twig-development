@@ -69,3 +69,14 @@ The “uri.value” will simply get the path object, using “file_url” will c
 
 <img src="{{ imageUrl }}" alt="{{ imageAlt }}">
 ```
+
+<p>&nbsp;</p>
+
+
+**Debugging and acessing Twig variables**
+
+```
+<script>console.log({{ _context | json_encode | raw}});</script>
+
+{{ dump() }}
+```
