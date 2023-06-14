@@ -74,7 +74,7 @@ The “uri.value” will simply get the path object, using “file_url” will c
 
 ---
 
-### Twig debugging
+### Twig Debugging
 
 <p>&nbsp;</p>
 
