@@ -72,8 +72,13 @@ The “uri.value” will simply get the path object, using “file_url” will c
 
 <p>&nbsp;</p>
 
+---
 
-**Debugging and acessing Twig variables**
+### Twig debugging
+
+<p>&nbsp;</p>
+
+**Accessing variables**
 
 ```
 <script>console.log({{ _context | json_encode | raw}});</script>
