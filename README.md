@@ -1,5 +1,29 @@
 ### Twig Development Cheatsheet
 ---
+### Loop through items and add commas
+
+```php
+  {% for item in content.field_value['#items'] %}
+    {{ item }}
+    {{- not loop.last ? ',' : '' -}}
+  {% endfor %}
+```
+
+or
+
+```php
+  {% for item in content.field_value['#items'] %}
+    {% if loop.index >= 1 and loop.last == false %}
+      {{ item }}
+    {% else %}
+      {{ item }}
+    {% endif %}
+  {% endfor %}
+```
+
+<p>&nbsp;</p>
+
+---
 ### Getting Media
 
 Obtaining media data can sometimes be tricky. There are several factors that determine how the variables are found including if the media has an internal or external path, a relative or absolute path, if the media is an image or video, if the media comes from a single field or WYSIWYG, and more. Below are a few successful options used with getting media data and displaying it to front-end twig templates.
