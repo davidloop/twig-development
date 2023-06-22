@@ -1,5 +1,14 @@
 ### Twig Development Cheatsheet
 ---
+### Trim text and append ellipsis
+
+```php
+  {{ content.field_meta_summary[0]['#context'].value|slice(0, 120) ~ ' ...' }}
+```
+
+<p>&nbsp;</p>
+
+---
 ### Loop through items and add commas
 
 ```php
