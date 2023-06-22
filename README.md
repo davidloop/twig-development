@@ -24,6 +24,23 @@ or
 <p>&nbsp;</p>
 
 ---
+### Loop through items and combine items into groups
+
+The following code will loop through repeated items and combine them into 2 items per row.
+
+```php
+  {% for items in content.field_value['#items']|batch(2) %}
+    <div class="row">
+      {% for item in items %}
+        {{ item }}
+      {% endfor %}
+    </div>
+  {% endfor %}
+```
+
+<p>&nbsp;</p>
+
+---
 ### Getting Media
 
 Obtaining media data can sometimes be tricky. There are several factors that determine how the variables are found including if the media has an internal or external path, a relative or absolute path, if the media is an image or video, if the media comes from a single field or WYSIWYG, and more. Below are a few successful options used with getting media data and displaying it to front-end twig templates.
