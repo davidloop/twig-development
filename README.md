@@ -1,5 +1,18 @@
 ### Twig Development Cheatsheet
 ---
+### Get the node URL within a view
+
+```php
+  {% for item in content.field_value['#items'] %}
+    <a href="{{ path('entity.node.canonical', {'node': item.entity.id()}) }}">
+      {{ item }}
+    </a>
+  {% endfor %}
+```
+
+<p>&nbsp;</p>
+
+---
 ### Trim text and append ellipsis
 
 ```php
