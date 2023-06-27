@@ -1,6 +1,6 @@
 ### Twig Development Cheatsheet
 ---
-### Get the node URL within a view
+### Get the node URL within a View
 
 ```php
   {% for item in content.field_value['#items'] %}
