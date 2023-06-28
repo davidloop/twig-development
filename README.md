@@ -1,11 +1,11 @@
 ### Twig Development Cheatsheet
 ---
-### Loop values within a Paragraph from Views
+### Get the node URL within a View
+
 ```php
-  {% for item in content.field_value[0].contents['#view'].result %}
-    <a href="{{ path('entity.node.canonical', {'node': item._entity.id()}) }}">
-      <h3>{{ item._entity.title.value }}</h3>
-      <p>{{ item._entity.field_meta_summary.value }}</p>
+  {% for item in content.field_value['#items'] %}
+    <a href="{{ path('entity.node.canonical', {'node': item.entity.id()}) }}">
+      {{ item }}
     </a>
   {% endfor %}
 ```
@@ -13,12 +13,12 @@
 <p>&nbsp;</p>
 
 ---
-### Get the node URL within a View
-
+### Loop values within a Paragraph from Views
 ```php
-  {% for item in content.field_value['#items'] %}
-    <a href="{{ path('entity.node.canonical', {'node': item.entity.id()}) }}">
-      {{ item }}
+  {% for item in content.field_value[0].contents['#view'].result %}
+    <a href="{{ path('entity.node.canonical', {'node': item._entity.id()}) }}">
+      <h3>{{ item._entity.title.value }}</h3>
+      <p>{{ item._entity.field_meta_summary.value }}</p>
     </a>
   {% endfor %}
 ```
