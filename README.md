@@ -32,6 +32,12 @@
   {{ content.field_meta_summary[0]['#context'].value|slice(0, 120) ~ ' ...' }}
 ```
 
+or with [Twig Tweak](https://www.drupal.org/docs/contributed-modules/twig-tweak-2x/cheat-sheet#s-truncate-filter)
+
+```php
+  {{ content.field_meta_summary[0]['#context'].value|truncate(120, true, true) }}
+```
+
 <p>&nbsp;</p>
 
 ---
