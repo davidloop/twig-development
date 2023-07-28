@@ -1,5 +1,28 @@
 ### Twig Development Cheatsheet
 ---
+### Get CKEditor WYSIWYG data
+
+```php
+  {% set text = {
+    '#type':    'processed_text',
+    '#text':    content.field_value[0]['#text'],
+    '#format':  content.field_value[0]['#format'],
+  } %}
+```
+
+or
+
+```php
+  {% set text = {
+    '#type':    'processed_text',
+    '#text':    content.field_value[0].value,
+    '#format':  content.field_value[0].format,
+  } %}
+```
+
+<p>&nbsp;</p>
+
+---
 ### Get the node URL within a View
 
 ```php
