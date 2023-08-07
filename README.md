@@ -179,6 +179,35 @@ The “uri.value” will simply get the path object, using “file_url” will c
 
 ---
 
+### Theme
+
+<p>&nbsp;</p>
+
+**Get the parent menu data**
+
+```
+$menu_link_manager = \Drupal::service('plugin.manager.menu.link');
+$route_match = \Drupal::routeMatch();
+$route_name = $route_match->getRouteName();
+$route_parameters = $route_match->getRawParameters()->all();
+$menu_links = $menu_link_manager->loadLinksByRoute($route_name, $route_parameters);
+
+if (!empty($menu_links)) {
+  $menu_link = reset($menu_links);
+  if ($parent = $menu_link->getParent()) {
+    $parent = $menu_link_manager->createInstance($parent);
+    $variables['parent_url'] = $parent->getUrlObject()->toString();
+    $variables['parent_title'] = $parent->getTitle();
+  }
+}
+
+<a href="{{ parent_url }}">{{ parent_title }}</a>
+```
+
+<p>&nbsp;</p>
+
+---
+
 ### Twig Debugging
 
 <p>&nbsp;</p>
@@ -186,7 +215,9 @@ The “uri.value” will simply get the path object, using “file_url” will c
 **Accessing variables**
 
 ```
-<script>console.log({{ _context | json_encode | raw}});</script>
-
 {{ dump() }}
+```
+or
+```
+<script>console.log({{ _context | json_encode | raw}});</script>
 ```
