@@ -221,3 +221,28 @@ or
 ```
 <script>console.log({{ _context | json_encode | raw}});</script>
 ```
+
+<p>&nbsp;</p>
+
+---
+### JavaScript with Drupal Behaviors
+jQuery is optional
+
+```
+/**
+ * @file javascript-file.js
+ */
+
+(function ($, Drupal, once) {
+  "use strict";
+
+  Drupal.behaviors.BehaviorName = {
+    attach: function (context, settings) {
+      once('attributeName', '.selector-to-have-context', context).forEach(function(attributeName, index) {
+        
+      });
+    }
+  };
+
+})(jQuery, Drupal, once);
+```
