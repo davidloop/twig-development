@@ -208,11 +208,11 @@ if (!empty($menu_links)) {
 
 ---
 
-### Twig Debugging
+### Debugging
 
 <p>&nbsp;</p>
 
-**Accessing variables**
+**Accessing variables in Twig**
 
 ```
 {{ dump() }}
@@ -220,6 +220,14 @@ if (!empty($menu_links)) {
 or
 ```
 <script>console.log({{ _context | json_encode | raw}});</script>
+```
+
+<p>&nbsp;</p>
+
+**Accessing variables in .theme or .module**
+
+```
+\Drupal::messenger()->addMessage('HOLA!');
 ```
 
 <p>&nbsp;</p>
